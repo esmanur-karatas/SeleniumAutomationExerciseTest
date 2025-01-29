@@ -51,8 +51,11 @@ public class ContactUsPage {
         messageField.sendKeys(message);
     }
     public void uploadFile() {
-        uploadFile.click();
         uploadFile.sendKeys("C:\\Users\\Huawei\\Downloads\\Q2B_OR.png");
+        // yüklemek istediğiniz dosyayı seçelim
+        String filePath = System.getProperty("user.home") + "\\Downloads\\Q2B_OR.png";
+        uploadFile.sendKeys(filePath);
+
     }
     public void submitButton() {
         submitButton.click();

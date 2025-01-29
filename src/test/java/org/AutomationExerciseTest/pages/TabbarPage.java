@@ -24,6 +24,15 @@ public class TabbarPage extends Driver {
     @FindBy(xpath = "//a[@href='/logout']")
     private WebElement logoutButton;
 
+    @FindBy(xpath = "//a[@href='/contact_us']")
+    private WebElement contactUsButton;
+
+    @FindBy(xpath = "(//a[@href='/'])[1]")
+    private WebElement homeButton;
+
+    @FindBy(xpath = "(//a[@href='/test_cases'])[1]")
+    private WebElement testCasesButton;
+
     public void clickRegisterLogin() {
         registerLogin.click();
     }
@@ -35,5 +44,16 @@ public class TabbarPage extends Driver {
 
     public void clickLogout() {
         logoutButton.click();
+    }
+
+    public void clickContactUs() {
+        contactUsButton.click();
+    }
+    public void clickHome() {
+        homeButton.click();
+    }
+
+    public void clickTestCases() {
+        testCasesButton.click();
     }
 }

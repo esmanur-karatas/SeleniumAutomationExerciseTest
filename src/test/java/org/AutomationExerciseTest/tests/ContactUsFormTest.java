@@ -33,7 +33,7 @@ public class ContactUsFormTest {
     public void contactUsFormTest() {
         Driver.getDriver().get(url);
         reusableMethods.verifyHomePage();
-     //   tabbarPage.contactUsButton();
+        tabbarPage.clickContactUs();
         contactUsPage.verifyContactUs();
         contactUsPage.name("John Doe");
         contactUsPage.email("john@doe.com");
@@ -44,6 +44,9 @@ public class ContactUsFormTest {
         Alert alert = driver.switchTo().alert();
         System.out.println("Pop-up mesajı: " + alert.getText());
         alert.accept();
+        tabbarPage.clickHome();
+        reusableMethods.verifyHomePage();
+
     }
 
     @AfterClass
