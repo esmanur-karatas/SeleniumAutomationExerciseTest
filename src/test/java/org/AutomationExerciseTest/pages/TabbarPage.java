@@ -36,6 +36,9 @@ public class TabbarPage extends Driver {
     @FindBy(xpath = "//a[@href='/products']")
     private WebElement productButton;
 
+    @FindBy(xpath = "(//a[@href=\"/view_cart\"])[1]")
+    private WebElement basketButton;
+
     public void clickRegisterLogin() {
         registerLogin.click();
     }
@@ -61,5 +64,8 @@ public class TabbarPage extends Driver {
     }
     public void clickProduct() {
         productButton.click();
+    }
+    public void basketButtonClick(){
+        basketButton.click();
     }
 }

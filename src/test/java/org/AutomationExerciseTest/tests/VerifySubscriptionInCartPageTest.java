@@ -11,34 +11,33 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class VerifySubscriptionInhomepageTest {
-    static WebDriver driver;
+public class VerifySubscriptionInCartPageTest {
     TabbarPage tabbarPage;
     ReusableMethods reusableMethods;
-    JavascriptExecutor js;
     SubscriptionPage subscriptionPage;
     String url = ConfigurationReader.getProperty("address");
 
     @BeforeMethod
     public void setUp() {
-        driver = Driver.getDriver();
         tabbarPage = new TabbarPage();
         reusableMethods = new ReusableMethods();
-        js = (JavascriptExecutor) driver;
         subscriptionPage = new SubscriptionPage();
     }
+
     @Test
     public void verifySubscriptionInHomePageTest() {
         Driver.getDriver().get(url);
         reusableMethods.verifyHomePage();
-        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        tabbarPage.basketButtonClick();
         subscriptionPage.verifySubscription();
-        subscriptionPage.inputEmail("esoes@gmail.com");
+        subscriptionPage.inputEmail("deneme@gmail.com");
         subscriptionPage.clickSubmit();
         subscriptionPage.verifySuccessSubscribe();
+
     }
     @AfterClass
     public void tearDown() {
         Driver.closeDriver();
     }
 }
+
