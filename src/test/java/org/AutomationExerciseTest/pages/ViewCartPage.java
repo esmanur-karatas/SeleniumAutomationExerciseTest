@@ -28,10 +28,29 @@ public class ViewCartPage {
     @FindBy(xpath = "(//p[@class='cart_total_price'])[2]")
     private WebElement secondProductTotal;
 
+    @FindBy(className = "disabled")
+    private WebElement verifyQuantity;
+
+    @FindBy(xpath = "//a[text()='Proceed To Checkout']")
+    private WebElement ProceedToCheckoutButton;
+
+    @FindBy(xpath = "(//a[@href='/login'])[2]")
+    private WebElement registerLoginButton;
+
+    @FindBy(className = "cart_quantity_delete")
+    private WebElement cartQuantityDelete;
+
+    @FindBy(xpath = "//b[text()='Cart is empty!']")
+    private WebElement verifyCartDeleteProduct;
+
     public void ProductsVerify(){
         Assert.assertTrue(firstProductVerify.isDisplayed());
         Assert.assertTrue(secondProductVerify.isDisplayed());
         System.out.println("Ürünler başarılı bir şekilde sepete eklendi");
+    }
+
+    public void verifyViewCart(){
+        Assert.assertTrue(firstProductVerify.isDisplayed());
     }
 
     public void PriceAndTotalComparisonOfProducts(){
@@ -46,4 +65,33 @@ public class ViewCartPage {
         System.out.println("Doğrulama başarılı");
     }
 
+    public void setVerifyQuantity(){
+        String actualText = verifyQuantity.getText();
+        String expectedText = "4";
+        if(expectedText.equals(actualText)){
+            System.out.println("Miktar doğrulama başarılı");
+        }else {
+            System.out.println("Miktar Doğrulama Başarısız");
+        }
+    }
+
+    public void clickProceedToCheckoutButton(){
+        ProceedToCheckoutButton.click();
+    }
+
+    public void clickRegisterLoginButton(){
+        registerLoginButton.click();
+    }
+
+    public void setClickCartQuantityDelete(){
+        cartQuantityDelete.click();
+    }
+
+    public void setverifyCartDeleteProduct()
+    {
+        String actualText = "Cart is empty!";
+        String expectedText = verifyCartDeleteProduct.getText();
+        Assert.assertEquals(expectedText,actualText);
+        System.out.println("Ürün başarılı bir şekilde silindi!");
+    }
 }

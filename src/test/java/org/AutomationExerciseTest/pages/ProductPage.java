@@ -33,7 +33,7 @@ public class ProductPage {
     @FindBy(className = "product-image-wrapper")
     private List<WebElement> featuresItems;
 
-    public void verifyProductPage(String expectedText ) {
+    public void verifyProductPage(String expectedText) {
         String actualText = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals(expectedText, actualText);
         System.out.println("Product page verified");

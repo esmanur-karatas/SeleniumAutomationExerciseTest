@@ -26,6 +26,7 @@ public class AddProductInCartPage {
     @FindBy(xpath = "(//a[@href='/view_cart'])[1]")
     private WebElement viewCart;
 
+
     public void clickAddFirstProductToCart(){
         addFirstProductToCart.click();
     }

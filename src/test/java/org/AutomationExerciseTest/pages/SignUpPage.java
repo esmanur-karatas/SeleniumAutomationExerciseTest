@@ -45,10 +45,10 @@ public class SignUpPage {
     private WebElement option;
 
     @FindBy(id="first_name")
-    private WebElement firstName;
+    protected WebElement firstName;
 
     @FindBy(id="last_name")
-    private WebElement lastName;
+    protected WebElement lastName;
 
     @FindBy(id="company")
     private WebElement company;
@@ -166,4 +166,5 @@ public class SignUpPage {
     public void createAccount() {
         createAccount.click();
     }
+
 }

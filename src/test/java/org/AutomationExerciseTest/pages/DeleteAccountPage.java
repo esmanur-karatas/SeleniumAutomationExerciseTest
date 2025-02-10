@@ -18,6 +18,9 @@ public class DeleteAccountPage {
     @FindBy(css = "li a[href='/delete_account']")
     private WebElement deleteAccount;
 
+    @FindBy(xpath = " //a[@data-qa='continue-button']")
+    private WebElement continueButton;
+
     public void getVerifyAccountDeleted() {
         Assert.assertTrue(verifyAccountDeleted.isDisplayed());
 
@@ -25,6 +28,11 @@ public class DeleteAccountPage {
 
     public void deleteAccount() {
         deleteAccount.click();
+    }
+
+    public void setContinueButton()
+    {
+        continueButton.click();
     }
 }
 

@@ -1,6 +1,7 @@
 package org.AutomationExerciseTest.pages;
 
 import org.AutomationExerciseTest.utilities.Driver;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -31,6 +32,12 @@ public class ProductDetailPage {
     @FindBy(xpath = "//p[text()=' Polo']")
     private WebElement productBrand;
 
+    @FindBy(id = "quantity")
+    private WebElement productQuantityCount;
+
+    @FindBy(xpath = "(//button//i)[1]")
+    private WebElement addToBasket;
+
     public void verifyProductName() {
         Assert.assertTrue(productName.isDisplayed());
         System.out.println("Product Name: " + productName.getText());
@@ -54,6 +61,14 @@ public class ProductDetailPage {
     public void verifyProductBrand() {
         Assert.assertTrue(productBrand.isDisplayed());
         System.out.println("Product Brand: " + productBrand.getText());
+    }
+    public void productQuantityCount() throws InterruptedException {
+        productQuantityCount.clear();
+        productQuantityCount.sendKeys("4", Keys.TAB);
+        Thread.sleep(3000);
+    }
+    public void clickAddToBasket(){
+        addToBasket.click();
     }
 
 }
