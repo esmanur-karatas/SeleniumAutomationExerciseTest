@@ -8,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import java.util.List;
+
 public class HomePage {
     WebDriver driver;
     JavascriptExecutor js;
@@ -32,6 +34,8 @@ public class HomePage {
 
     @FindBy(xpath = "(//h2[text()='Full-Fledged practice website for Automation Engineers'])[1]")
     private WebElement verifySliderText;
+
+
 
     public void scrollHomePageDown() {
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
@@ -61,4 +65,6 @@ public class HomePage {
         Assert.assertTrue(verifySliderText.isDisplayed());
         System.out.println("Doğrulama başarılı: " +verifySliderText.getText());
     }
+
+
 }

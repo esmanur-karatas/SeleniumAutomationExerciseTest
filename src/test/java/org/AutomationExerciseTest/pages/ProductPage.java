@@ -11,7 +11,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.CommandLineArgs;
 
+import javax.xml.xpath.XPath;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 
 public class ProductPage {
@@ -32,6 +34,9 @@ public class ProductPage {
 
     @FindBy(className = "product-image-wrapper")
     private List<WebElement> featuresItems;
+
+    @FindBy(xpath = ".//a[text()='Add to cart']")
+    private List<WebElement> addToCartButton;
 
     public void verifyProductPage(String expectedText) {
         String actualText = Driver.getDriver().getCurrentUrl();
@@ -59,4 +64,23 @@ public class ProductPage {
 
         System.out.println("Tüm ürünler başarıyla görüntüleniyor.\nToplam " + featuresItems.size() + " ürün bulundu.");
     }
+
+    public void addAllProductsToCart() {
+        Assert.assertFalse(addToCartButton.isEmpty(), "Sepete ekleme butonları bulunamadı!");
+
+        int limit = Math.min(3, addToCartButton.size()); // Eğer 3'ten az ürün varsa, mevcut ürün sayısını kullan
+
+        for (int i = 0; i < limit; i++) {
+            try {
+                addToCartButton.get(i).click();
+                System.out.println("Ürün sepete eklendi: " + addToCartButton.get(i).getText());
+            } catch (NoSuchElementException e) {
+                System.out.println("Sepete ekleme butonu bulunamadı.");
+            }
+        }
+
+        System.out.println("Toplam " + limit + " ürün sepete eklendi.");
+    }
+
+
 }
