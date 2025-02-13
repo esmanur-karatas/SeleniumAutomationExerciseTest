@@ -18,3 +18,18 @@ Bu proje, [Automation Exercise](https://automationexercise.com/test_cases) sites
 1. **Projeyi klonlayın:**
    ```bash
    git clone https://github.com/kullaniciAdiniz/AutomationExerciseTest.git
+
+
+Maven kullanıyorsanız:
+  ```bash
+  mvn clean install
+
+```bash
+mvn test
+```
+Raporları görüntüleyin:
+Test çalıştırıldıktan sonra target/reports klasörü içinde test raporlarını bulabilirsiniz.
+📌 Test Yönetimi
+Testlerin tamamlanma süreçlerini JIRA benzeri bir proje yönetim aracı ile takip ettim. Testler başlangıç, devam eden ve tamamlananlar olarak kategorize edildi.
+
+🚀 26 test case başarıyla tamamlandı!
