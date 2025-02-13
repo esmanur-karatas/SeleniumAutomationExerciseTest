@@ -46,16 +46,16 @@ public class PaymentPage {
         cartNumberInput.sendKeys(cartNumber);
     }
 
-    public void setCvcInput(String cvc){
-        cartNumberInput.sendKeys(cvc);
+    public void setCvcInput(int cvc){
+        cartNumberInput.sendKeys(String.valueOf(cvc));
     }
 
-    public void setExpiryMonthInput(String expiryMonth){
-        cartNumberInput.sendKeys(expiryMonth);
+    public void setExpiryMonthInput(int expiryMonth){
+        cartNumberInput.sendKeys(String.valueOf(expiryMonth));
     }
 
-    public void setExpiryYearInput(String expiryYear){
-        cartNumberInput.sendKeys(expiryYear);
+    public void setExpiryYearInput(int expiryYear){
+        cartNumberInput.sendKeys(String.valueOf(expiryYear));
     }
 
     public void setPayButton(){

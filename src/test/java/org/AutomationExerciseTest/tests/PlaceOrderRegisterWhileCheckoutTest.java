@@ -74,9 +74,9 @@ public class PlaceOrderRegisterWhileCheckoutTest extends RegisterUserTest {
     checkoutPage.clickPaymentButton();
     paymentPage.setCartNameInput("sdjkcfn");
     paymentPage.setCartNumberInput("şwaodjx");
-    paymentPage.setCvcInput("678");
-    paymentPage.setExpiryMonthInput("12");
-    paymentPage.setExpiryYearInput("2002");
+    paymentPage.setCvcInput(323);
+    paymentPage.setExpiryMonthInput(11);
+    paymentPage.setExpiryYearInput(2002);
     paymentPage.setPayButton();
     paymentPage.setOrderPlaced();
     tabbarPage.deleteAccount();

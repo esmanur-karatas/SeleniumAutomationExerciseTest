@@ -102,9 +102,9 @@ public class DownloadInvoiceAfterPurchaseOrderTest {
 //        16. Ödeme ayrıntılarını girin: Karttaki İsim, Kart Numarası, CVC, Son Kullanma Tarihi
         paymentPage.setCartNameInput("deneme");
         paymentPage.setCartNumberInput("456323232");
-        paymentPage.setCvcInput(String.valueOf(Integer.parseInt("544")));
-        paymentPage.setExpiryMonthInput(String.valueOf(Integer.parseInt("12")));
-        paymentPage.setExpiryYearInput(String.valueOf(Integer.parseInt("2020")));
+        paymentPage.setCvcInput(212);
+        paymentPage.setExpiryMonthInput(12);
+        paymentPage.setExpiryYearInput(2020);
 
 
 //        17. 'Öde ve Siparişi Onayla' butonuna tıklayın
